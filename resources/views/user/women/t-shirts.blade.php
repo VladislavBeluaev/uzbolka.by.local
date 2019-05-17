@@ -1,8 +1,8 @@
 @extends('user.layouts.app_user')
 @section('pageTitle', 'Женские футболки оптом от производителя')
 @section('content')
-    <section class="t_shirts">
-        <div class="container">
+    <section class="menTShirts">
+        <div class="container pt-4">
             <div class="breadcrumbWrapper">
                 <nav class="breadcrumbs">
                     <p><a href="{{route('user.index')}}">Главная</a></p>
@@ -155,7 +155,7 @@
                     </div>
                     <div class="products-container__cards">
                         <div class="row no-margins">
-                            {{--@foreach($t_shirts as $t_shirt)--}}
+                           {{-- @foreach($t_shirts as $t_shirt)--}}
                                 <div class="products_card col-4">
                                     <div class="product_name">
                                         <p>
@@ -189,7 +189,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            {{--@endforeach--}}
+                           {{-- @endforeach--}}
                         </div>
                     </div>
                 </div>

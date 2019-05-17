@@ -2,7 +2,7 @@
 @section('pageTitle', 'Мужские футболки оптом от производителя')
 @section('content')
     <section class="t_shirts">
-        <div class="container">
+        <div class="container pt-4">
             <div class="breadcrumbWrapper">
                 <nav class="breadcrumbs">
                     <p><a href="{{route('user.index')}}">Главная</a></p>

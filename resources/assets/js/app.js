@@ -2,6 +2,7 @@ import {ProductsCard} from './components/classes/productsCard.class.js';
 import {Menu} from './components/classes/Menu.class.js';
 import {Slider} from './components/classes/Slider.class.js';
 import {Gallery} from './components/classes/Gallery.class.js';
+import {AsynchronousLoaderImg} from './components/classes/AsynchronousLoaderImg.class.js';
 (function ($, undefined) {
     $(function () {
         let pathInfo = window.location.pathname.substr(1);
@@ -30,6 +31,12 @@ import {Gallery} from './components/classes/Gallery.class.js';
         )).run();
         switch (pathInfo) {
             case "":
+                (new AsynchronousLoaderImg({
+                    preloadImgCollection:{
+                        banner:'/images/main_logo_1.jpg',
+                    }
+                }).load());
+
                 (new Slider({
                     slider: $('.cardsSlider'),
                     duration: 500,

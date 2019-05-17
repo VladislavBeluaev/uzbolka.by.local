@@ -52,16 +52,14 @@ input[type=number]::-webkit-outer-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
-.t_shirts,.product_article{
-  margin-top: -56px;
-}
+
 .breadcrumbWrapper {
   margin-bottom: 8px;
 }
 
 .breadcrumbs {
   .f-start-start;
-  font-size: .9em;
+  font-size: 0.6875em;
   text-transform: uppercase;
   font-weight: 600;
   font-family: @baseFontFamily;
@@ -525,15 +523,12 @@ input.form-control:focus {
 
 .article__container__image {
   width: 35%;
-
-  > .article__container__image {
-    .default-padding;
+  .default-padding;
+  .gallery-image-full_size{
+    p{
+      text-align: center;
+    }
   }
-	.gallery-image-full_size{
-			p{
-	text-align:center;
-				}
-		}
 }
 
 .gallery-image-wrapper {
@@ -971,7 +966,7 @@ input.form-control:focus {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 10;
+  z-index: 4;
 
   .menubar-fixed__content {
     height: 60px;
@@ -1137,14 +1132,16 @@ input.form-control:focus {
 
     a {
       img {
-        width: 100%;
+        max-width: 100%;
         height: auto;
       }
     ;
     }
 
   }
-
+.display-none{
+  display: none;
+}
   /*#text_test{
     font-weight: 600;
     margin-top:-120px;
@@ -1369,31 +1366,31 @@ div.slider_prev {
 .next_btn span:hover, .prev_btn span:hover {
   color: red;
 }
+
 .footer-content {
-  .f-end-center;
-  padding-bottom: 20px;
-  position: relative;
-  height: 270px;
-  background: url(/images/main_background_footer.png) no-repeat 50% 0;
-  background-size: cover;
+  .default-padding;
+  margin-top: 24px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 70px;
+  background-color: #f0f0f0;
   text-align: center;
 
   p:first-child {
     font-family: 'Roboto Slab', serif;
-    font-size: 20px;
-    line-height: 32px;
-    margin-bottom: 16px;
-    color:#fff;
+    font-size: 14px;
+    font-weight: 600;
   }
-}
-.footer-copy {
-  margin-top: 4px;
 
-  span {
-    font-family: 'Anton', sans-serif;
-    font-size: 18px;
-    color: #36B547;
-    padding-right: 16px;
+  .footer-copy {
+    margin-top: 4px;
+
+    span:first-child {
+      font-family: 'Anton', sans-serif;
+      font-size: 16px;
+      color: #36B547;
+      padding-right: 16px;
+    }
   }
 }
 

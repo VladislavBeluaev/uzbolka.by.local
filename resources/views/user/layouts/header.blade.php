@@ -43,27 +43,27 @@
                 <div class="menubar-catalog_item">
                     <p>
                         <a href="{{route('user.man_t_shirts')}}">
-                            <img src="{{asset('images/catalog/man.jpg')}}" alt="man-cart">
-                            <img src="{{asset('images/catalog/man_hover.jpg')}}" alt="man-cart" class="d-none">
-                            <span>Мужские футболки</span>
+                            <img src="{{asset('images/catalog/man_cr.png')}}" alt="man-cart">
+                            <img src="{{asset('images/catalog/man_hover_cr.png')}}" alt="man-cart" class="d-none">
+                            <span>Мужские майки</span>
                         </a>
                     </p>
                 </div>
                 <div class="menubar-catalog_item">
                     <p>
                         <a href="{{route('user.woman_t_shirts')}}">
-                            <img src="{{asset('images/catalog/woman.jpg')}}" alt="woman-cart">
-                            <img src="{{asset('images/catalog/woman_hover.jpg')}}" alt="woman-cart" class="d-none">
-                            <span>Женские футболки</span>
+                            <img src="{{asset('images/catalog/woman_cr.png')}}" alt="woman-cart">
+                            <img src="{{asset('images/catalog/woman_hover_cr.png')}}" alt="woman-cart" class="d-none">
+                            <span>Женские майки</span>
                         </a>
                     </p>
                 </div>
                 <div class="menubar-catalog_item">
                     <p>
-                        <a href="{{route('user.children_t_shirts')}}">
-                            <img src="{{asset('images/catalog/child.jpg')}}" alt="child-cart">
-                            <img src="{{asset('images/catalog/child_hover.jpg')}}" alt="child-cart" class="d-none">
-                            <span>Детские футболки</span>
+                        <a href="{{route('user.woman_t_shirts')}}">
+                            <img src="{{asset('images/catalog/child_cr.png')}}" alt="child-cart">
+                            <img src="{{asset('images/catalog/child_hover_cr.png')}}" alt="child-cart" class="d-none">
+                            <span>Детские майки</span>
                         </a>
                     </p>
                 </div>

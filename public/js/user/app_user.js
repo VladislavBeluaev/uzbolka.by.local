@@ -68,7 +68,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(1);
-module.exports = __webpack_require__(6);
+module.exports = __webpack_require__(7);
 
 
 /***/ }),
@@ -81,6 +81,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_classes_Menu_class_js__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_classes_Slider_class_js__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_classes_Gallery_class_js__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_classes_AsynchronousLoaderImg_class_js__ = __webpack_require__(6);
+
 
 
 
@@ -108,6 +110,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }).run();
         switch (pathInfo) {
             case "":
+                new __WEBPACK_IMPORTED_MODULE_4__components_classes_AsynchronousLoaderImg_class_js__["a" /* AsynchronousLoaderImg */]({
+                    preloadImgCollection: {
+                        banner: '/images/main_logo_1.jpg'
+                    }
+                }).load();
+
                 new __WEBPACK_IMPORTED_MODULE_2__components_classes_Slider_class_js__["a" /* Slider */]({
                     slider: $('.cardsSlider'),
                     duration: 500,
@@ -515,6 +523,77 @@ var Gallery = function () {
 
 /***/ }),
 /* 6 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AsynchronousLoaderImg; });
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+/**
+ * Created by isida on 16.05.2019.
+ */
+var AsynchronousLoaderImg = function () {
+    function AsynchronousLoaderImg(preloadImgObject) {
+        _classCallCheck(this, AsynchronousLoaderImg);
+
+        this._preloadImgCollection = Object.entries(preloadImgObject.preloadImgCollection);
+    }
+
+    _createClass(AsynchronousLoaderImg, [{
+        key: 'load',
+        value: function load() {
+            var _this = this;
+
+            this._preloadImgCollection.forEach(function (array) {
+                var _array = _slicedToArray(array, 2),
+                    container = _array[0],
+                    src = _array[1];
+
+                if (container === 'banner') {
+                    _this._bannerPreloadCallback(container, src);
+                }
+            });
+        }
+    }, {
+        key: '_bannerPreloadCallback',
+        value: function _bannerPreloadCallback(container, src) {
+            var imgWithReplacingSrc$ = $('.' + container).find('img').first();
+            if (!imgWithReplacingSrc$.length) return;
+            var loadingImage = new Image();
+            $('#preload');
+            loadingImage.onload = function () {
+                var replaceSrc = this.src;
+                imgWithReplacingSrc$.animate({ opacity: 0.0 }, 150, function () {
+                    $(this).attr('src', replaceSrc);
+                    $('#preload').removeClass('display-none').css({
+                        position: 'absolute',
+                        top: '50%',
+                        left: '50%',
+                        'z-index': 10000
+                    });
+                });
+                imgWithReplacingSrc$.animate({ opacity: 1.0 }, { duration: 300, specialEasing: {
+                        opacity: 'easeOutQuint'
+                    } });
+            };
+            setTimeout(function () {
+                $('#preload').addClass('display-none');
+            }, 1500);
+            loadingImage.src = src;
+        }
+    }]);
+
+    return AsynchronousLoaderImg;
+}();
+
+
+
+/***/ }),
+/* 7 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

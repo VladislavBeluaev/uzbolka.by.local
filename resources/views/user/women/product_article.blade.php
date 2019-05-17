@@ -2,7 +2,7 @@
 @section('pageTitle', $t_shirt->name)
 @section('content')
     <section class="product_article">
-        <div class="container">
+        <div class="container pt-4">
             <div class="breadcrumbWrapper">
                 <nav class="breadcrumbs">
                     <p><a href="{{route('user.index')}}">Главная</a></p>
@@ -74,7 +74,7 @@
                         </div>
                         <p>(Обратите внимание, что для заказов принимается количество товаров кратное пяти.</p>
                     </div>
-                    <div class="article__container__order d-none">
+                    <div class="article__container__order">
                         <h3>Заказ:</h3>
                         <table class="table table-bordered table-striped table-hover">
                             <thead>
