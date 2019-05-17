@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\Facades\Config;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,8 +10,13 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+$middleware = [];
+if(Config::get('app.debug'))
+{
+    array_push($middleware, ['middleware' => 'clearcache']);
+}
 
-Route::group(['namespace'=>'User',],function(){
+Route::group(['namespace'=>'User','middleware'=>'clearcache'],function(){
     Route::group(['prefix'=>'men'],function (){
         Route::get('t-shirts','DashboardController@allTShirts')->name('user.man_t_shirts');
         Route::get('t-shirts/{model}','DashboardController@getTShirt')->name('user.man_getTShirt');

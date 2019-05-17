@@ -576,9 +576,11 @@ var AsynchronousLoaderImg = function () {
                         'z-index': 10000
                     });
                 });
-                imgWithReplacingSrc$.animate({ opacity: 1.0 }, { duration: 300, specialEasing: {
+                imgWithReplacingSrc$.animate({ opacity: 1.0 }, {
+                    duration: 300, specialEasing: {
                         opacity: 'easeOutQuint'
-                    } });
+                    }
+                });
             };
             setTimeout(function () {
                 $('#preload').addClass('display-none');

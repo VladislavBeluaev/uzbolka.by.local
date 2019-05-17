@@ -9,7 +9,7 @@
                 <p class="display-none" id="preload"><a href="{{route('user.man_t_shirts')}}">
                         {{--<img src="/images/preloader.gif" alt="preloader">--}}
                         <video autoplay loop muted playsinline>
-                            <source src="/images/preloader_1.webm" type="video/webm">
+                            <source src="/images/preloader.webm" type="video/webm">
                             {{--<source src="video.mp4" type="video/mp4">
                             <img src="animated.gif">--}}
                         </video>
